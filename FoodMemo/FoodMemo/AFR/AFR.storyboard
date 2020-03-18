@@ -14,9 +14,34 @@
                     <view key="view" contentMode="scaleToFill" id="ijr-ee-fN9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IfK-Gi-Tw2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="foodCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" id="hc0-St-845">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hc0-St-845" id="5sH-aT-fJK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hgh-Y7-k0B" firstAttribute="bottom" secondItem="IfK-Gi-Tw2" secondAttribute="bottom" id="Hf9-uA-tVS"/>
+                            <constraint firstItem="IfK-Gi-Tw2" firstAttribute="leading" secondItem="Hgh-Y7-k0B" secondAttribute="leading" id="eJO-ck-Uvh"/>
+                            <constraint firstItem="IfK-Gi-Tw2" firstAttribute="top" secondItem="Hgh-Y7-k0B" secondAttribute="top" id="muT-Fa-TKC"/>
+                            <constraint firstItem="Hgh-Y7-k0B" firstAttribute="trailing" secondItem="IfK-Gi-Tw2" secondAttribute="trailing" id="on6-JO-02a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hgh-Y7-k0B"/>
                     </view>
+                    <connections>
+                        <outlet property="foodTable" destination="IfK-Gi-Tw2" id="xKf-SB-BA6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9c-6L-5WU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

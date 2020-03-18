@@ -1,30 +1,46 @@
 //
 //  AFR01ViewController.swift
-//  FoodMemo
-//
-//  Created by 平島峻成 on 2020/03/19.
-//  Copyright © 2020 平島峻成. All rights reserved.
-//
+//  食材選択画面
+
 
 import UIKit
 
-class AFR01ViewController: UIViewController {
+class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    private let foodItems : NSArray = ["ケチャップ","マヨネーズ","醤油"]
+
+    @IBOutlet weak var foodTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 各種delegateの設定.
+        foodTable.dataSource = self
+        foodTable.delegate = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // cell選択時の動作
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Num: \(indexPath.row)")
+        print("Value: \(foodItems[indexPath.row])")
     }
-    */
-
+    
+    // cellの総数の設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foodItems.count
+    }
+    
+    // cellに値を設定
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // cellを取得
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath)
+        
+        // cellに配列の中身を入れる
+        cell.textLabel!.text = "\(foodItems[indexPath.row])"
+        
+        return cell
+    }
+    
 }
