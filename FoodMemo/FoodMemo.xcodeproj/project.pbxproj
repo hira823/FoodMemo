@@ -15,6 +15,8 @@
 		F823921524218710006FDD5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F823921324218710006FDD5B /* LaunchScreen.storyboard */; };
 		F823922024218710006FDD5B /* FoodMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823921F24218710006FDD5B /* FoodMemoTests.swift */; };
 		F823922B24218710006FDD5B /* FoodMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823922A24218710006FDD5B /* FoodMemoUITests.swift */; };
+		F823923B2422DB5D006FDD5B /* AFR01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823923A2422DB5D006FDD5B /* AFR01ViewController.swift */; };
+		F823923D2422DB6A006FDD5B /* AFR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F823923C2422DB6A006FDD5B /* AFR.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		F823922624218710006FDD5B /* FoodMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F823922A24218710006FDD5B /* FoodMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMemoUITests.swift; sourceTree = "<group>"; };
 		F823922C24218710006FDD5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F823923A2422DB5D006FDD5B /* AFR01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFR01ViewController.swift; sourceTree = "<group>"; };
+		F823923C2422DB6A006FDD5B /* AFR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AFR.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		F82392072421870F006FDD5B /* FoodMemo */ = {
 			isa = PBXGroup;
 			children = (
+				F82392392422DADB006FDD5B /* AFR */,
 				F823923824218882006FDD5B /* MENU */,
 				F82392082421870F006FDD5B /* AppDelegate.swift */,
 				F823920A2421870F006FDD5B /* SceneDelegate.swift */,
@@ -134,6 +139,15 @@
 				F823920E2421870F006FDD5B /* MENU.storyboard */,
 			);
 			path = MENU;
+			sourceTree = "<group>";
+		};
+		F82392392422DADB006FDD5B /* AFR */ = {
+			isa = PBXGroup;
+			children = (
+				F823923A2422DB5D006FDD5B /* AFR01ViewController.swift */,
+				F823923C2422DB6A006FDD5B /* AFR.storyboard */,
+			);
+			path = AFR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,7 @@
 			files = (
 				F823921524218710006FDD5B /* LaunchScreen.storyboard in Resources */,
 				F823921224218710006FDD5B /* Assets.xcassets in Resources */,
+				F823923D2422DB6A006FDD5B /* AFR.storyboard in Resources */,
 				F82392102421870F006FDD5B /* MENU.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F823920D2421870F006FDD5B /* MENU01ViewController.swift in Sources */,
+				F823923B2422DB5D006FDD5B /* AFR01ViewController.swift in Sources */,
 				F82392092421870F006FDD5B /* AppDelegate.swift in Sources */,
 				F823920B2421870F006FDD5B /* SceneDelegate.swift in Sources */,
 			);
