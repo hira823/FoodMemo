@@ -1,10 +1,6 @@
 //
 //  AFR02ViewController.swift
-//  FoodMemo
-//
-//  Created by 平島峻成 on 2020/03/21.
-//  Copyright © 2020 平島峻成. All rights reserved.
-//
+//  残量編集画面
 
 import UIKit
 
@@ -22,4 +18,19 @@ class AFR02ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // 完了ボタン押下時処理
+    @IBAction func finishTapped(_ sender: Any) {
+        // MENUのStoryboard取得
+        let nextStoryboard : UIStoryboard = UIStoryboard(name: "MENU", bundle: nil)
+        
+        // MENU01ViewControllerの取得
+        let nextVC = nextStoryboard.instantiateViewController(withIdentifier: "MENU01")
+        
+        // 遷移アニメーションの指定
+        nextVC.modalPresentationStyle = .fullScreen
+        
+        // MENU01ViewControllerに遷移
+        self.present(nextVC, animated: true, completion: nil)
+
+    }
 }

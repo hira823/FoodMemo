@@ -23,11 +23,11 @@
             </objects>
             <point key="canvasLocation" x="-520" y="-20"/>
         </scene>
-        <!--Title-->
+        <!--メニュー画面-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MENU01" title="メニュー画面" id="BYZ-38-t0r" customClass="ViewController" customModule="FoodMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
