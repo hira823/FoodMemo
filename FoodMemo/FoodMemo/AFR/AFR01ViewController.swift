@@ -8,6 +8,7 @@ import UIKit
 class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let foodItems : NSArray = ["ケチャップ","マヨネーズ","醤油"]
+    private var foodSelected : String = ""
 
     @IBOutlet weak var foodTable: UITableView!
     
@@ -24,6 +25,12 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(foodItems[indexPath.row])")
+        
+        // AFR02へ渡す文字列の設定
+        foodSelected = foodItems[indexPath.row] as! String
+        
+        // AFR02へ遷移するSegueの呼び出し
+        performSegue(withIdentifier: "showAFR02", sender: nil)
     }
     
     // cellの総数の設定
@@ -41,6 +48,16 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel!.text = "\(foodItems[indexPath.row])"
         
         return cell
+    }
+    
+    // Segue実行前の処理
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showAFR02"){
+            let vcAFR02:AFR02ViewController = (segue.destination as? AFR02ViewController)!
+            
+            vcAFR02.foodText = foodSelected
+        }
+    
     }
     
 }

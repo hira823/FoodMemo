@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--食材選択画面-->
         <scene sceneID="dmI-jW-BBj">
             <objects>
-                <viewController id="Vcj-pb-8Ik" customClass="AFR01ViewController" customModule="FoodMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="食材選択画面" id="Vcj-pb-8Ik" customClass="AFR01ViewController" customModule="FoodMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ijr-ee-fN9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,11 +41,40 @@
                     </view>
                     <connections>
                         <outlet property="foodTable" destination="IfK-Gi-Tw2" id="xKf-SB-BA6"/>
+                        <segue destination="Fqj-R0-6EP" kind="show" identifier="showAFR02" id="ohK-pa-WqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9c-6L-5WU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-330" y="-207"/>
+            <point key="canvasLocation" x="-233" y="-208"/>
+        </scene>
+        <!--残量編集画面-->
+        <scene sceneID="Ajq-Ma-ZUF">
+            <objects>
+                <viewController id="Fqj-R0-6EP" customClass="AFR02ViewController" customModule="FoodMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PNw-bO-lBE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DV-Sx-IHo">
+                                <rect key="frame" x="97" y="411" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BMY-Sk-s4M"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="残量編集画面" id="Y9X-cU-mFQ"/>
+                    <connections>
+                        <outlet property="label" destination="6DV-Sx-IHo" id="buv-Qz-G42"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZt-cj-Hao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="-208.25892857142856"/>
         </scene>
     </scenes>
 </document>
