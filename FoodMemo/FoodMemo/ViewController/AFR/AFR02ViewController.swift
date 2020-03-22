@@ -30,7 +30,7 @@ class AFR02ViewController: UIViewController {
         let nextVC = nextNC.topViewController as! MENU01ViewController
 
         // 値を入れる
-        nextVC.foodText = self.foodText ?? "kara"
+        nextVC.foodItems.append(self.foodText ?? "")
         
         // 遷移アニメーションの指定
         nextNC.modalPresentationStyle = .fullScreen

@@ -7,7 +7,7 @@ import UIKit
 
 class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private let foodItems : NSArray = ["ケチャップ","マヨネーズ","醤油"]
+    // private let foodItems : NSArray = ["ケチャップ","マヨネーズ","醤油"]
     private var foodSelected : String = ""
 
     @IBOutlet weak var foodTable: UITableView!
@@ -24,10 +24,10 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // cell選択時の動作
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
-        print("Value: \(foodItems[indexPath.row])")
+        print("Value: \(foodData[indexPath.row])")
         
         // AFR02へ渡す文字列の設定
-        foodSelected = foodItems[indexPath.row] as! String
+        foodSelected = foodData[indexPath.row].name
         
         // AFR02へ遷移するSegueの呼び出し
         performSegue(withIdentifier: "showAFR02", sender: nil)
@@ -35,7 +35,7 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // cellの総数の設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodItems.count
+        return foodData.count
     }
     
     // cellに値を設定
@@ -45,7 +45,7 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath)
         
         // cellに配列の中身を入れる
-        cell.textLabel!.text = "\(foodItems[indexPath.row])"
+        cell.textLabel!.text = "\(foodData[indexPath.row].name)"
         
         return cell
     }

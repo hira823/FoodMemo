@@ -10,16 +10,14 @@ import UIKit
 
 class MENU01ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-    var foodItems:[String] = []
+    var foodItems = [String]()
     var foodText:String?
     
     @IBOutlet weak var foodTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        foodItems.append(foodText ?? "")
-        
+                
         // 各種delegateの設定.
         foodTable.dataSource = self
         foodTable.delegate = self

@@ -18,6 +18,11 @@
 		F823923B2422DB5D006FDD5B /* AFR01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823923A2422DB5D006FDD5B /* AFR01ViewController.swift */; };
 		F823923D2422DB6A006FDD5B /* AFR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F823923C2422DB6A006FDD5B /* AFR.storyboard */; };
 		F823923F24257A3B006FDD5B /* AFR02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823923E24257A3B006FDD5B /* AFR02ViewController.swift */; };
+		F823924624281AF8006FDD5B /* FoodData.json in Resources */ = {isa = PBXBuildFile; fileRef = F823924524281AF8006FDD5B /* FoodData.json */; };
+		F823924924281C10006FDD5B /* mayonnaise.png in Resources */ = {isa = PBXBuildFile; fileRef = F823924724281C10006FDD5B /* mayonnaise.png */; };
+		F823924A24281C10006FDD5B /* ketchup.png in Resources */ = {isa = PBXBuildFile; fileRef = F823924824281C10006FDD5B /* ketchup.png */; };
+		F823924C24281CA6006FDD5B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823924B24281CA6006FDD5B /* Food.swift */; };
+		F823924E24281FFF006FDD5B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823924D24281FFF006FDD5B /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		F823923A2422DB5D006FDD5B /* AFR01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFR01ViewController.swift; sourceTree = "<group>"; };
 		F823923C2422DB6A006FDD5B /* AFR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AFR.storyboard; sourceTree = "<group>"; };
 		F823923E24257A3B006FDD5B /* AFR02ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFR02ViewController.swift; sourceTree = "<group>"; };
+		F823924524281AF8006FDD5B /* FoodData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FoodData.json; sourceTree = "<group>"; };
+		F823924724281C10006FDD5B /* mayonnaise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mayonnaise.png; path = ../../../../Downloads/mayonnaise.png; sourceTree = "<group>"; };
+		F823924824281C10006FDD5B /* ketchup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ketchup.png; path = ../../../../Downloads/ketchup.png; sourceTree = "<group>"; };
+		F823924B24281CA6006FDD5B /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		F823924D24281FFF006FDD5B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +115,9 @@
 		F82392072421870F006FDD5B /* FoodMemo */ = {
 			isa = PBXGroup;
 			children = (
-				F82392392422DADB006FDD5B /* AFR */,
-				F823923824218882006FDD5B /* MENU */,
+				F823924024281A09006FDD5B /* Model */,
+				F823924124281A1B006FDD5B /* ViewController */,
+				F823924224281A39006FDD5B /* Resource */,
 				F82392082421870F006FDD5B /* AppDelegate.swift */,
 				F823920A2421870F006FDD5B /* SceneDelegate.swift */,
 				F823921124218710006FDD5B /* Assets.xcassets */,
@@ -151,6 +162,34 @@
 				F823923C2422DB6A006FDD5B /* AFR.storyboard */,
 			);
 			path = AFR;
+			sourceTree = "<group>";
+		};
+		F823924024281A09006FDD5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F823924B24281CA6006FDD5B /* Food.swift */,
+				F823924D24281FFF006FDD5B /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F823924124281A1B006FDD5B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F82392392422DADB006FDD5B /* AFR */,
+				F823923824218882006FDD5B /* MENU */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F823924224281A39006FDD5B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F823924524281AF8006FDD5B /* FoodData.json */,
+				F823924824281C10006FDD5B /* ketchup.png */,
+				F823924724281C10006FDD5B /* mayonnaise.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +299,10 @@
 				F823921524218710006FDD5B /* LaunchScreen.storyboard in Resources */,
 				F823921224218710006FDD5B /* Assets.xcassets in Resources */,
 				F823923D2422DB6A006FDD5B /* AFR.storyboard in Resources */,
+				F823924A24281C10006FDD5B /* ketchup.png in Resources */,
+				F823924924281C10006FDD5B /* mayonnaise.png in Resources */,
 				F82392102421870F006FDD5B /* MENU.storyboard in Resources */,
+				F823924624281AF8006FDD5B /* FoodData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,11 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F823924E24281FFF006FDD5B /* Data.swift in Sources */,
 				F823920D2421870F006FDD5B /* MENU01ViewController.swift in Sources */,
 				F823923B2422DB5D006FDD5B /* AFR01ViewController.swift in Sources */,
 				F82392092421870F006FDD5B /* AppDelegate.swift in Sources */,
 				F823923F24257A3B006FDD5B /* AFR02ViewController.swift in Sources */,
 				F823920B2421870F006FDD5B /* SceneDelegate.swift in Sources */,
+				F823924C24281CA6006FDD5B /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
