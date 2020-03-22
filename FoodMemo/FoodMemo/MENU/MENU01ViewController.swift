@@ -8,13 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MENU01ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    var foodItems:[String] = []
+    var foodText:String?
+    
+    @IBOutlet weak var foodTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        foodItems.append(foodText ?? "")
+        
+        // 各種delegateの設定.
+        foodTable.dataSource = self
+        foodTable.delegate = self
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foodItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // cellを取得
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCellMENU", for: indexPath)
 
+        // cellに配列の中身を入れる
+        cell.textLabel!.text = "\(foodItems[indexPath.row])"
+        
+        return cell
+    }
 }
 

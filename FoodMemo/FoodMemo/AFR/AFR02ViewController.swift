@@ -23,14 +23,20 @@ class AFR02ViewController: UIViewController {
         // MENUのStoryboard取得
         let nextStoryboard : UIStoryboard = UIStoryboard(name: "MENU", bundle: nil)
         
-        // MENU01ViewControllerの取得
-        let nextVC = nextStoryboard.instantiateViewController(withIdentifier: "MENU01")
+        // NavigationControllerの取得
+        let nextNC : UINavigationController = nextStoryboard.instantiateViewController(withIdentifier: "NAVI") as! UINavigationController
+        
+        // 遷移先ViewCntrollerの取得
+        let nextVC = nextNC.topViewController as! MENU01ViewController
+
+        // 値を入れる
+        nextVC.foodText = self.foodText ?? "kara"
         
         // 遷移アニメーションの指定
-        nextVC.modalPresentationStyle = .fullScreen
+        nextNC.modalPresentationStyle = .fullScreen
         
         // MENU01ViewControllerに遷移
-        self.present(nextVC, animated: true, completion: nil)
+        self.present(nextNC, animated: true, completion: nil)
 
     }
 }
