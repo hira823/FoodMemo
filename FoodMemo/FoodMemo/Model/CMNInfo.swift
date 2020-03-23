@@ -10,37 +10,42 @@ import Foundation
 import  UIKit
 
 public final class MENU{
-    var name:[String]
-    var foodImage:UIImage
+    var foodNameItems:[String]
+    var foodImageItems:[UIImage]
     
-    init(name:[String],foodImage:UIImage) {
-        self.name = name
-        self.foodImage = foodImage
+    init(foodNameItems:[String],foodImageItems:[UIImage]) {
+        self.foodNameItems = foodNameItems
+        self.foodImageItems = foodImageItems
     }
 }
 
 class MenuSingleton : NSObject{
-    var menu = MENU(name:[String](),foodImage: UIImage())
+    var menu = MENU(foodNameItems:[String](),foodImageItems: [UIImage]())
+
     static let shredInstance:MenuSingleton = MenuSingleton()
     private override init(){}
     
-    func setName(name:String){
-        menu.name.append(name)
+    func setFoodName(name:String){
+        menu.foodNameItems.append(name)
     }
     
-    func setImageName(foodImage:UIImage){
-        menu.foodImage = foodImage
+    func setFoodImage(foodImage:UIImage){
+        menu.foodImageItems.append(foodImage)
     }
     
-    func getName() -> [String]{
-        return menu.name
+    func getFoodNameItems() -> [String]{
+        return menu.foodNameItems
     }
     
-    func getImageName() -> UIImage{
-        return menu.foodImage
+    func getFoodImageItems() -> [UIImage]{
+        return menu.foodImageItems
     }
     
-    func deleteName(row:Int){
-        menu.name.remove(at: row)
+    func deleteFoodName(row:Int){
+        menu.foodNameItems.remove(at: row)
+    }
+    
+    func deleteFoodImage(row:Int){
+        menu.foodImageItems.remove(at: row)
     }
 }

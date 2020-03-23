@@ -24,7 +24,7 @@ class MENU01ViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuSingleton.getName().count
+        return menuSingleton.getFoodNameItems().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +32,8 @@ class MENU01ViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodCellMENU", for: indexPath)
 
         // cellに配列の中身を入れる
-        cell.textLabel!.text = "\(menuSingleton.getName()[indexPath.row])"
+        cell.textLabel!.text = "\(menuSingleton.getFoodNameItems()[indexPath.row])"
+        cell.imageView?.image = menuSingleton.getFoodImageItems()[indexPath.row]
         
         return cell
     }
@@ -41,9 +42,11 @@ class MENU01ViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return true
     }
     
+    // スワイプで削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            menuSingleton.deleteName(row: indexPath.row)
+            menuSingleton.deleteFoodName(row: indexPath.row)
+            menuSingleton.deleteFoodImage(row: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }

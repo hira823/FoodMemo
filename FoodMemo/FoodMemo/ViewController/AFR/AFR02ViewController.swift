@@ -27,8 +27,8 @@ class AFR02ViewController: UIViewController {
     @IBAction func finishTapped(_ sender: Any) {
         // MENU用インスタンスに保存
         let menuSingleton : MenuSingleton = MenuSingleton.shredInstance
-        menuSingleton.setName(name: self.foodText ?? "")
-        menuSingleton.setImageName(foodImage: UIImage(named: foodImage!)!)
+        menuSingleton.setFoodName(name: self.foodText ?? "")
+        menuSingleton.setFoodImage(foodImage: UIImage(named: foodImage!)!)
         
         // MENUのStoryboard取得
         let nextStoryboard : UIStoryboard = UIStoryboard(name: "MENU", bundle: nil)
