@@ -6,12 +6,13 @@ import UIKit
 
 class AFR02ViewController: UIViewController {
     
-    
     @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var foodImageView: UIImageView!
     
+    // 前画面から渡された食料名
     var foodText : String?
+    
+    // 前画面から渡された食料画像名
     var foodImage : String?
     
     override func viewDidLoad() {
@@ -19,21 +20,21 @@ class AFR02ViewController: UIViewController {
         
         label.text = foodText
         foodImageView.image = UIImage(named: foodImage!)
+        
     }
     
     // 完了ボタン押下時処理
     @IBAction func finishTapped(_ sender: Any) {
+        // MENU用インスタンスに保存
+        let menuSingleton : MenuSingleton = MenuSingleton.shredInstance
+        menuSingleton.setName(name: self.foodText ?? "")
+        menuSingleton.setImageName(foodImage: UIImage(named: foodImage!)!)
+        
         // MENUのStoryboard取得
         let nextStoryboard : UIStoryboard = UIStoryboard(name: "MENU", bundle: nil)
         
         // NavigationControllerの取得
         let nextNC : UINavigationController = nextStoryboard.instantiateViewController(withIdentifier: "NAVI") as! UINavigationController
-        
-        // 遷移先ViewCntrollerの取得
-        let nextVC = nextNC.topViewController as! MENU01ViewController
-
-        // 値を入れる
-        nextVC.foodItems.append(self.foodText ?? "")
         
         // 遷移アニメーションの指定
         nextNC.modalPresentationStyle = .fullScreen

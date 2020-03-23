@@ -23,6 +23,7 @@
 		F823924A24281C10006FDD5B /* ketchup.png in Resources */ = {isa = PBXBuildFile; fileRef = F823924824281C10006FDD5B /* ketchup.png */; };
 		F823924C24281CA6006FDD5B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823924B24281CA6006FDD5B /* Food.swift */; };
 		F823924E24281FFF006FDD5B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823924D24281FFF006FDD5B /* Data.swift */; };
+		F82392502428EB35006FDD5B /* CMNInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F823924F2428EB35006FDD5B /* CMNInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F823924824281C10006FDD5B /* ketchup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ketchup.png; path = ../../../../Downloads/ketchup.png; sourceTree = "<group>"; };
 		F823924B24281CA6006FDD5B /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F823924D24281FFF006FDD5B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F823924F2428EB35006FDD5B /* CMNInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMNInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				F823924B24281CA6006FDD5B /* Food.swift */,
 				F823924D24281FFF006FDD5B /* Data.swift */,
+				F823924F2428EB35006FDD5B /* CMNInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				F823924E24281FFF006FDD5B /* Data.swift in Sources */,
 				F823920D2421870F006FDD5B /* MENU01ViewController.swift in Sources */,
+				F82392502428EB35006FDD5B /* CMNInfo.swift in Sources */,
 				F823923B2422DB5D006FDD5B /* AFR01ViewController.swift in Sources */,
 				F82392092421870F006FDD5B /* AppDelegate.swift in Sources */,
 				F823923F24257A3B006FDD5B /* AFR02ViewController.swift in Sources */,

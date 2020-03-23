@@ -7,7 +7,10 @@ import UIKit
 
 class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // 次画面に渡す食料名
     private var SelectedFoodName : String = ""
+    
+    // 次画面に渡す食料画像名
     private var SelectedFoodImageName : String = ""
     
     @IBOutlet weak var foodTable: UITableView!
@@ -18,14 +21,10 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // 各種delegateの設定.
         foodTable.dataSource = self
         foodTable.delegate = self
-        
     }
     
     // cell選択時の動作
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Num: \(indexPath.row)")
-        print("Value: \(foodData[indexPath.row])")
-        
         // AFR02へ渡すデータの設定
         SelectedFoodName = foodData[indexPath.row].name
         SelectedFoodImageName = foodData[indexPath.row].imageName
@@ -56,6 +55,7 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(segue.identifier == "showAFR02"){
             let vcAFR02:AFR02ViewController = (segue.destination as? AFR02ViewController)!
             
+            // 選択した情報を次画面に渡す
             vcAFR02.foodText = SelectedFoodName
             vcAFR02.foodImage = SelectedFoodImageName
         }
