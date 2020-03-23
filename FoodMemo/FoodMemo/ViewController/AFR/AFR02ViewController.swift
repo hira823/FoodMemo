@@ -8,14 +8,17 @@ class AFR02ViewController: UIViewController {
     
     
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var foodImageView: UIImageView!
+    
     var foodText : String?
+    var foodImage : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         label.text = foodText
-
-        // Do any additional setup after loading the view.
+        foodImageView.image = UIImage(named: foodImage!)
     }
     
     // 完了ボタン押下時処理

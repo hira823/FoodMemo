@@ -81,6 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="残量編集画面" id="Y9X-cU-mFQ"/>
                     <connections>
+                        <outlet property="foodImageView" destination="ajf-f7-s7t" id="MMl-k1-u5B"/>
                         <outlet property="label" destination="6DV-Sx-IHo" id="buv-Qz-G42"/>
                     </connections>
                 </viewController>

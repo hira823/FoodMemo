@@ -7,9 +7,9 @@ import UIKit
 
 class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    // private let foodItems : NSArray = ["ケチャップ","マヨネーズ","醤油"]
-    private var foodSelected : String = ""
-
+    private var SelectedFoodName : String = ""
+    private var SelectedFoodImageName : String = ""
+    
     @IBOutlet weak var foodTable: UITableView!
     
     override func viewDidLoad() {
@@ -26,8 +26,9 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("Num: \(indexPath.row)")
         print("Value: \(foodData[indexPath.row])")
         
-        // AFR02へ渡す文字列の設定
-        foodSelected = foodData[indexPath.row].name
+        // AFR02へ渡すデータの設定
+        SelectedFoodName = foodData[indexPath.row].name
+        SelectedFoodImageName = foodData[indexPath.row].imageName
         
         // AFR02へ遷移するSegueの呼び出し
         performSegue(withIdentifier: "showAFR02", sender: nil)
@@ -55,7 +56,8 @@ class AFR01ViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(segue.identifier == "showAFR02"){
             let vcAFR02:AFR02ViewController = (segue.destination as? AFR02ViewController)!
             
-            vcAFR02.foodText = foodSelected
+            vcAFR02.foodText = SelectedFoodName
+            vcAFR02.foodImage = SelectedFoodImageName
         }
     
     }
